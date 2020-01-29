@@ -1,0 +1,20 @@
+header
+	div.divlogo
+		img(src="/img/agenda8.png")
+	-if(data)
+		-if(locals.edit)
+			ul.menu
+				li
+					p ≡
+					ul.submenu
+						li 
+							a(href="/logout") Salir
+		-else	
+			input(type="text" id="buscar" class="buscar" for="buscar" name="buscar" placeholder="Buscar")
+			ul.menu
+				li
+					p ≡
+					ul.submenu
+						li 
+							a(href="/logout") Salir
+

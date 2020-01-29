@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	include header
+	section.contenedoragregar
+		div.title
+			h3 Agregar contacto
+		form.form(method="POST" action="/")
+			-if(!provider)
+				div.campos
+					input(type="text" class= "formnom" for="nombre" name="nombre" placeholder="Nombre" required)
+				div.campos
+					input(type="text" class= "formdire" for="direccion" name="direccion" placeholder="Direccion" required)
+				div.campos
+					input(type="text" class= "formtel" for="telefono" name="telefono" placeholder="Telefono" required)
+				div.campos
+					input(type="submit" value="Agregar" class="bluebut")
+			-else
+				div.campos
+					input(type="text" class= "formnom" for="nombre" name="nombre" placeholder="Nombre" required)
+				div.campos
+					input(type="text" class= "formtel" for="telefono" name="telefono" placeholder="Telefono" required)
+				div.campos
+					input(type="submit" value="Agregar" class="bluebut")
+

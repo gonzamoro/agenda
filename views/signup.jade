@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	include header
+	div.backimage
+	div.backimage2
+	section.contenedorlogin
+		div.title
+			h3 Registrate
+		-if(signupMessage)
+			div.message #{signupMessage}
+		form.form(method="POST" action="/signup")
+				div.campos
+					input(type="email" for="email" class="email" name="email" placeholder="e-mail" required)
+				div.campos
+					input(type="password" for="password" class="password" name="password" placeholder="contraseña" required)
+				div.button
+					input.bluebut(type="submit" value="Crear cuenta")
+				a(href="/") o Iniciá sesión si ya tenés una

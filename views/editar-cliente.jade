@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	include header
+	section.contenedoragregar
+		div.title
+			h3 Editar contacto
+		form.form(method="POST" action="/actualizar/#{data.nombre}")
+				-if(data.direccion)
+					div.campos
+						input(type="text" class= "formnom" for="nombre" name="nombre" value="#{data.nombre}" placeholder="Nombre")
+					div.campos
+						input(type="text" class= "formdire" for="direccion" name="direccion" value="#{data.direccion}" placeholder="Direccion")
+					div.campos
+						input(type="text" class= "formtel" for="telefono" name="telefono" value="#{data.telefono}" placeholder="Telefono")
+					div.campos
+						input(type="hidden", for ="id", name="id", value="#{data._id}")
+						input(type="submit" value="Guardar" class="bluebut")
+						input(type="hidden", name="_method", value="PUT")
+				-else
+					div.campos
+						input(type="text" class= "formnom" for="nombre" name="nombre" value="#{data.nombre}" placeholder="Nombre")
+					div.campos
+						input(type="text" class= "formtel" for="telefono" name="telefono" value="#{data.telefono}" placeholder="Telefono")
+					div.campos
+						input(type="hidden", for ="id", name="id", value="#{data._id}")
+						input(type="submit" value="Guardar" class="bluebut")
+						input(type="hidden", name="_method", value="PUT")

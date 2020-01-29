@@ -1,0 +1,46 @@
+extends layout
+
+block content
+	include header
+	section.pestanas
+		section.clientes(id="clien")
+			p Clientes
+		section.proveedores(id="prov")
+			p Proveedores
+	section.contenedor(id="cont")
+		-if(data.length)
+			table(id="table" class='table')
+				-each cliente in data
+					tr
+						td.nom 
+							p #{cliente.nombre}
+						td.dir
+							p #{cliente.direccion}
+						td.tel 
+							p #{cliente.telefono}
+						td.editelim
+							div.dots
+								svg
+									g
+										circle(cx="5" cy="5" r="2")
+										circle(cx="5" cy="12" r="2")
+										circle(cx="5" cy="19" r="2")
+								div.options
+									form(method="GET" action="/editar/#{cliente.nombre}")
+										input.edit(type="submit", value="Editar")
+									input.delet(type="button" id="eliminar" value="Eliminar"  data-contacto="#{cliente.nombre}")
+		-else
+			p.error Tocá el boton de agregar para agregar un contacto.
+	div(id="divadd")
+		form(method="GET" action="/agregar")
+			input.add(type="submit", value="+")
+	script(src="js/nodes.js")
+	//- script.
+	//- 	var nodes = document.querySelector("tbody").childNodes.length;
+	//- 	var letras = ['arco','avion','aereo','abierto','atar', 'abaco'];
+	//- 	ver=()=>{
+	//- 		letras.sort()
+	//- 		console.log(nodes,letras)
+	//- 		};
+	//- 	window.addEventListener("load",ver);
+		
