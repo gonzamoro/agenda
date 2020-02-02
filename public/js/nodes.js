@@ -635,7 +635,7 @@ window.addEventListener("load",sortList);
 window.addEventListener("load",buscar);
 window.addEventListener("load",proveedores);
 window.addEventListener("load",eliminar);
-window.addEventListener("load",preload);
+//window.addEventListener("load",preload);
 
 //window.addEventListener("fetch",function(){alert('hola')});
 //window.addEventListener("load",deletealert);
