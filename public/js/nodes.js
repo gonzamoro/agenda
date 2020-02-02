@@ -44,12 +44,13 @@ function buscar()
      //divadd = document.getElementById('divadd');
     
     buscar.addEventListener('keyup', (value)=>{
+      const table = document.getElementById('table');
+      table.innerHTML =''
       preload()
      
-      const table = document.getElementById('table');
  
       var words = buscar.value
-      table.innerHTML =''
+      //table.innerHTML =''
 
     const criterio = {data:words, whatsearch:provsearch}
   
