@@ -44,6 +44,7 @@ function buscar()
      //divadd = document.getElementById('divadd');
     
     buscar.addEventListener('keyup', (value)=>{
+      preload()
      
       const table = document.getElementById('table');
  
@@ -66,8 +67,11 @@ function buscar()
     )
     .then(data=> data.json())
     .then(data=> {
+      deletePreloader()
       console.log(data)
       data.forEach(data => {
+        
+        
         const tr = document.createElement('tr')
         if(data.direccion){
         tr.innerHTML =`
@@ -116,6 +120,7 @@ function buscar()
           </td>
         `
         }
+        
         table.appendChild(tr)
         sortList() 
         const buttonalertelim = document.getElementsByClassName('delet')
@@ -141,10 +146,11 @@ function buscar()
 
 
 function proveedores(){
-    const prov = document.getElementById('prov');
-    
-    
-    prov.addEventListener("click", ()=> {
+  const prov = document.getElementById('prov');
+  
+  
+  prov.addEventListener("click", ()=> {
+    preload()
 
       prov.style.borderBottom= "4px solid rgb(190, 190, 190"
       clien.style.borderBottom= "none"
@@ -161,12 +167,13 @@ function proveedores(){
      
       provsearch = true
       fetch('/proveedores')
-      .then(res=> res.json())
+      .then(res =>res.json())
       .then(data=>{
 
 
         if(document.getElementById('table'))
         {
+          deletePreloader()
           const table = document.getElementById('table')
           table.innerHTML =''
     
@@ -289,6 +296,7 @@ function clientes(){
     clien.style.borderBottom= "4px solid rgb(190, 190, 190)"
     
     clien.addEventListener("click", ()=> {
+      preload()
 
       clien.style.borderBottom= "4px solid rgb(190, 190, 190"
       prov.style.borderBottom= "none"
@@ -311,6 +319,7 @@ function clientes(){
 
       if(document.getElementById('table'))
       {
+        deletePreloader()
         const table = document.getElementById('table')
         table.innerHTML =''
 
@@ -593,11 +602,38 @@ function removechild()
   //backdelete.removeEventListener("click",removechild)
 }
 
+function preload()
+{
+  //const contenedor = document.getElementById('cont')
+  //const header = document.getElementById('header')
+  const preload= document.createElement('div')
+  preload.id = "load" 
+  body=document.body
+  preload.classList.add("loader")
+  //const preload = document.getElementById('load')
+
+  body.appendChild(preload)
+ //setTimeout(carga,2000)
+  //carga()
+}
+
+  function deletePreloader()
+  {
+    const preload = document.getElementById('load')
+    body=document.body
+    body.removeChild(preload)
+    //preload.style.visibility = "hidden"
+  }
+  
+
+
   
 window.addEventListener("load",clientes);
 window.addEventListener("load",sortList);
 window.addEventListener("load",buscar);
 window.addEventListener("load",proveedores);
 window.addEventListener("load",eliminar);
+//window.addEventListener("load",preload);
+
 //window.addEventListener("fetch",function(){alert('hola')});
 //window.addEventListener("load",deletealert);
