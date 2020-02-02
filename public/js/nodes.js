@@ -296,14 +296,15 @@ function clientes(){
     clien.style.borderBottom= "4px solid rgb(190, 190, 190)"
     
     clien.addEventListener("click", ()=> {
+      table.innerHTML =''
       preload()
 
+      const divadd = document.getElementById('divadd');
+      const contenedor = document.getElementById('cont');
       clien.style.borderBottom= "4px solid rgb(190, 190, 190"
       prov.style.borderBottom= "none"
       prov.style.backgroundColor = "rgb(247, 247, 247)"
       clien.style.backgroundColor = "rgb(215, 215, 215)"
-      const divadd = document.getElementById('divadd');
-      const contenedor = document.getElementById('cont');
       divadd.innerHTML = `
       <form method="GET" action="/agregar">
         <input type="submit" value="+" class="add"></input>
@@ -617,13 +618,13 @@ function preload()
   //carga()
 }
 
-  function deletePreloader()
+function deletePreloader()
   {
     const preload = document.getElementById('load')
     body=document.body
     body.removeChild(preload)
     //preload.style.visibility = "hidden"
-  }
+}
   
 
 
