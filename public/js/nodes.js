@@ -150,6 +150,7 @@ function proveedores(){
   
   
   prov.addEventListener("click", ()=> {
+    table.innerHTML =''
     preload()
 
       prov.style.borderBottom= "4px solid rgb(190, 190, 190"
@@ -175,7 +176,7 @@ function proveedores(){
         {
           deletePreloader()
           const table = document.getElementById('table')
-          table.innerHTML =''
+          //table.innerHTML =''
     
           data.forEach(proveedor => {
             const tr = document.createElement('tr')
@@ -316,7 +317,7 @@ function clientes(){
       .then(res=> res.json())
       .then(data=>{
 
-      table.innerHTML =''
+      //table.innerHTML =''
 
       if(document.getElementById('table'))
       {
