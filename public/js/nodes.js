@@ -154,10 +154,8 @@ function proveedores(){
     table.innerHTML =''
     preload()
 
-      prov.style.borderBottom= "4px solid rgb(190, 190, 190"
+      prov.style.borderBottom= "5px solid  white"
       clien.style.borderBottom= "none"
-      prov.style.backgroundColor = "rgb(215, 215, 215)"
-      clien.style.backgroundColor = "rgb(247, 247, 247)"
       const divadd = document.getElementById('divadd');
       const contenedor = document.getElementById('cont');
       //const table = document.getElementById('table');
@@ -294,8 +292,7 @@ function proveedores(){
 function clientes(){
    // window.removeEventListener("load",eliminar);
     const clien = document.getElementById('clien');
-    clien.style.backgroundColor = "rgb(215, 215, 215)"
-    clien.style.borderBottom= "4px solid rgb(190, 190, 190)"
+    clien.style.borderBottom= "5px solid  white"
     
     clien.addEventListener("click", ()=> {
       table.innerHTML =''
@@ -303,10 +300,8 @@ function clientes(){
 
       const divadd = document.getElementById('divadd');
       const contenedor = document.getElementById('cont');
-      clien.style.borderBottom= "4px solid rgb(190, 190, 190"
+      clien.style.borderBottom= "5px solid  white"
       prov.style.borderBottom= "none"
-      prov.style.backgroundColor = "rgb(247, 247, 247)"
-      clien.style.backgroundColor = "rgb(215, 215, 215)"
       divadd.innerHTML = `
       <form method="GET" action="/agregar">
         <input type="submit" value="+" class="add"></input>

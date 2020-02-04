@@ -1,4 +1,3 @@
-
 html
 {
 	box-sizing: border-box;
@@ -48,7 +47,7 @@ body
 	margin-top: 300px;
 	color:#6B6B6B;
 	/* background: url(../img/fondo.jpg); */
-	background-image: url(../img/fondo2.jpg);
+	background-image: url(../img/fondo3.jpg);
 	/* background-repeat: repeat; */
 	/* width: 100%; */
 	width: 100%;
@@ -68,7 +67,7 @@ body
 }
 .loader {
 /* visibility: visible; */
-  color: #727272;
+  color: rgb(70,178,185);
   font-size: 11px;
   text-indent: -99999em;
   margin: 55px auto;
@@ -146,7 +145,7 @@ body
 .backimage2
 {
 	position: absolute;
-	background: linear-gradient(rgba(108,168,228,1),#ffffff);
+	background: linear-gradient(rgba(70,178,185,1),#ffffff);
 	z-index: -1;
 	width: 100%;
 	height: 100%;
@@ -276,7 +275,7 @@ td p
 	vertical-align: top; */
 /* 	margin: 6em auto; */
 	width: 100%;
-	background-color: rgb(108, 168, 228);
+	background-color: rgb(70, 178, 185);
 	color: white;
 	height: 3em;
 	border-radius: 3px 3px 3px 3px;
@@ -289,7 +288,7 @@ td p
 .bluebutelim
 {
 	width: 30%;
-	background-color: rgb(108, 168, 228);
+	background-color: rgb(70, 178, 185);
 	color: white;
 	height: 3em;
 	border-radius: 3px 3px 3px 3px;
@@ -302,7 +301,12 @@ td p
 
 .bluebut:active, .add:active,.bluebutelim:active
 {
-	background-color: rgb(66, 132, 199);
+	background-color: rgb(6, 143, 153);
+}
+
+.bluebut:hover, .add:hover,.bluebutelim:hover
+{
+	cursor: pointer;
 }
 
 .button
@@ -363,7 +367,7 @@ td p
 	z-index: 999;
 	bottom: 40px;
 	right: 40px;
-	background-color: rgb(108, 168, 228);
+	background-color: rgb(70, 178, 185);
 	border-radius: 50px 50px 50px 50px;
 	color:	#fff;
 	font-size: 3rem;
@@ -390,11 +394,12 @@ td p
 	vertical-align:top;
 	width: 50%;
 	margin: 0 auto;
-	background-color: rgb(247, 247, 247);
+	background-color: rgb(70, 178, 185);
 	height: 100%;
 	text-align: center;
 	padding: 0.5em;
 	font-size: 1.5em;
+	color: white;
 /* 	border-radius: .25em; */
 /* 	box-shadow: 0.08em 0.08em 0.08em 0.08em rgba(0,0,0, .1); */
 
@@ -428,7 +433,7 @@ td p
  	vertical-align: top;
 	display:inline-block;
 	height: 70px;
-	width: 55%;
+	width: 40%;
 	text-align: left;
 	font-size: 2em;
 	margin-right: auto;
@@ -437,19 +442,21 @@ td p
 
 }
 
-.menu, .buscar
+/* .menu
 {
 	text-align: right;
 
-}
+} */
+
+
 .buscar
 {
-	width: 35%
+	width: 45%
 
 }
 .menu
 {
-	width: 10%;
+	width: 15%;
 	position:fixed;
 	right: 0;
 
@@ -478,6 +485,9 @@ td p
 	opacity: 0;
 	background-color: rgb(255, 255, 255);
 	font-size: 1.5rem;
+	border-radius: 6px 6px 6px 6px;
+	padding:0.5em;
+	box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.31);
 }
 
 .menu > li:hover > .submenu {
@@ -490,9 +500,20 @@ td p
 	transition: all .25s ease-out;
 } */
 
-.submenu{
+.submenu
+{
 	width: 6rem;
 	height: 3rem;
+}
+
+.submenu:hover
+{
+	background-color: rgb(231, 231, 231);
+}
+
+.submenu:active
+{
+	background-color: rgb(167, 167, 167);
 }
 /* //////////////////////////////////////////////////////////////////////////// */
 
@@ -513,9 +534,12 @@ td p
 	visibility: hidden;
 	/* transition: all 1s ease-out; */
 	opacity: 0;
-	background-color: rgb(255, 255, 255);
+	background-color: white;
 	font-size: 1.5rem;
+	box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.31);
 }
+
+
 .dots:hover > .options{
 	visibility: visible;
 	opacity: 1;
@@ -537,9 +561,10 @@ circle{
 .options{
 	transition: all .25s ease-out;
 	width: 6em;
-	height: 3rem;
+	height: 6rem;
 	top: 3rem;
 	left: -6rem;
+	border-radius: 6px 6px 6px 6px;
 }
 
 .options form input, .delet{
@@ -547,12 +572,35 @@ circle{
 	text-align: center;
 	font-size: 1rem;
 	padding:1em;
+	height: 50%;
+	background-color: white;
+	
+	
+	
+}
+.edit
+{
+	height: 50%;
+	background-color: white;
+	border-radius: 6px 6px 0px 0px;
+}
+.delet
+{
+	height: 50%;
+	background-color: white;
+	border-radius: 0px 0px 6px 6px;
+}
+.edit:hover, .delet:hover
+{
+	background-color: rgb(231, 231, 231);
 }
 
 .edit:active, .delet:active
 {
-	background-color: rgb(189, 189, 189);
+	background-color: rgb(167, 167, 167);
 }
+
+
 
 /* ////////////////////////////////////////////////////////////// */
 
@@ -682,7 +730,7 @@ header
 	.divlogo a {color: #FC33FF;}
 	.form
 	{
-		width: 25%;
+		width: 30%;
 	}
 
 
@@ -738,7 +786,7 @@ header
 
   .form
   {
-	  width: 30%;
+	  width: 40%;
   }
 
 /*   .divlogo
@@ -763,7 +811,7 @@ header
   }
    .form
   {
-	  width: 40%;
+	  width: 60%;
   }
 /*   .divlogo
   {
@@ -789,7 +837,7 @@ header
   .table{width: 100%;}
   .imglogin
   {
-	  width: 60%;
+	  width: 80%;
   } 
   .title{
 	width: 30%;
@@ -809,7 +857,7 @@ header
 }
 .form
 {
-	width: 60%;
+	width: 70%;
 }
 .imglogin
 {

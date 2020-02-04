@@ -5,19 +5,20 @@ block content
 	div.backimage
 	div.backimage2
 	div.backimage3
-	section.contenedorlogin
-		div.title
-			h3 Iniciar sesión
-		-if(signinMessage)
-			div.message #{signinMessage}
-		form.form(method="POST" action="/login")
-				div.campos
-					input(type="email" class="email" for="email" name="email" placeholder="e-mail" required)
-				div.campos
-					input(type="password" class="password" for="password" name="password" placeholder="contraseña" required)
-				div.button
-					input.bluebut(type="submit" value="Continuar")
-				a(href="/signup") o Creá una cuenta
+	div.content
+		section.contenedorlogin
+			div.title
+				h3 Iniciar sesión
+			-if(signinMessage)
+				div.message #{signinMessage}
+			form.form(method="POST" action="/login")
+					div.campos
+						input(type="email" class="email" for="email" name="email" placeholder="e-mail" required)
+					div.campos
+						input(type="password" class="password" for="password" name="password" placeholder="contraseña" required)
+					div.button
+							input.bluebut(type="submit" value="Continuar")
+					a(href="/signup") o Creá una cuenta
 	script(src="js/script.js")
 
 
