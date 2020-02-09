@@ -30,7 +30,8 @@ block content
 										input.edit(type="submit", value="Editar")
 									input.delet(type="button" id="eliminar" value="Eliminar"  data-contacto="#{cliente.nombre}")
 		-else
-			p.error Tocá el boton de agregar para agregar un contacto.
+			table(id="table" class='table')
+			//-p.error Tocá el boton de agregar para agregar un contacto.
 	div.divadd(id="divadd")
 		form(method="GET" action="/agregar")
 			input.add(type="submit", value="+")
